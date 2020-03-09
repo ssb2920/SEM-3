@@ -1,0 +1,180 @@
+ import java.util.*;
+import java.lang.*;
+
+class IllegalMarksException extends Exception{
+	int marks;
+	IllegalMarksException(int marks){
+		this.marks=marks;
+		}
+	
+	public String tostring(){
+		return "Wrong Input!! Marks between 0 to 100";
+		}
+}
+
+class Demo{	
+	
+	public static void main (String[] args){
+	try{
+	getmarks();	
+	}
+
+	catch (IllegalMarksException e){
+		System.out.println(e.tostring());
+	}
+}
+
+	static void getmarks() throws IllegalMarksException {
+		Scanner sc=new Scanner (System.in);
+		System.out.println("Enter your marks:");
+		int m=sc.nextInt();
+		
+		if (m>100 || m<0){
+			IllegalMarksException e=new IllegalMarksException(m);
+			throw e;}
+		
+		else if (m>=40)
+			System.out.println("Successful");
+
+		else
+			System.out.println("Unsuccessful");
+
+		}
+}
+
+
+/*output
+
+Enter your marks:
+120
+Wrong Input!! Marks between 0 to 100
+
+Enter your marks:
+45
+Successful
+
+Enter your marks:
+21
+Unsuccessful
+*/
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
